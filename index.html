@@ -7,7 +7,7 @@
 <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-<title>GitHub Issues Tracker</title>
+<title>Login-GitHub Issues Tracker</title>
 </head>
 
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
@@ -23,16 +23,16 @@
 <form class="flex flex-col gap-2">
 
 <label class="text-sm font-medium">Username</label>
-<input type="text" placeholder="Enter Username" class="input input-bordered w-full">
+<input id="userName" type="text" placeholder="Enter Username" class="input input-bordered w-full" value="admin">
 
 <p class="text-xs text-gray-500">Default: admin</p>
 
 <label class="text-sm font-medium">Password</label>
-<input type="password" placeholder="Enter Password" class="input input-bordered w-full">
+<input id="userPassword" type="password" placeholder="Enter Password" class="input input-bordered w-full" value="admin123">
 
 <p class="text-xs text-gray-500">Default: admin123</p>
 
-<button class="btn btn-primary w-full mt-2">Sign In</button>
+<button id="loginBtn" class="btn btn-primary w-full mt-2">Sign In</button>
 
 </form>
 
@@ -46,5 +46,6 @@
 
 </main>
 
+<script src="./script/index.js"></script>
 </body>
 </html>
