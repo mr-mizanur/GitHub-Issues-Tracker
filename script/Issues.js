@@ -2,6 +2,9 @@
 const issuesContainer = document.getElementById("issuesContainer");
 const issueCount = document.getElementById("issueCount");
 const buttons = document.querySelectorAll("#btnContener button");
+const searchInput = document.getElementById("searchInput");
+const loader = document.getElementById("loader")
+const modalContent = document.getElementById("modalContent")
 
 let allIssues = []; 
 
@@ -61,7 +64,6 @@ buttons.forEach(button => {
 });
 
 
-const searchInput = document.getElementById("searchInput");
 
 
 // Search filter
@@ -104,3 +106,30 @@ searchInput.addEventListener("input", () => {
         issuesContainer.appendChild(div);
     });
 });
+
+
+function showSpinnerWhileLoading(callback, delay = 300){
+    loader.classList.remove("hidden")        
+    setTimeout(() => {
+        callback()                            
+        loader.classList.add("hidden")        
+    }, delay)                                 
+}
+
+
+window.addEventListener("load", () => {
+    loader.classList.remove("hidden")
+    setTimeout(() => loader.classList.add("hidden"), 500) 
+})
+
+
+const someButton = document.getElementById("exampleBtn")
+if(someButton){
+    someButton.addEventListener("click", () => {
+        showSpinnerWhileLoading(() => {
+            console.log("Button clicked! Doing something...")
+        })
+    })
+}
+
+
