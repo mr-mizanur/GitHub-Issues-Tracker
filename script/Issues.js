@@ -36,7 +36,7 @@ function displayIssues(issues){
             </div>
         </div>
         <h2 class="font-bold text-xl mt-4 text-gray-800">${issue.title}</h2>
-        <p class="text-gray-500 mt-2">${issue.description}</p>
+        <p class="text-gray-500 mt-2 line-clamp-2">${issue.description}</p>
         <div class="flex gap-3 mt-4">
             <span class="border border-red-300 text-red-500 px-3 py-1 rounded-full text-sm">${issue.category}</span>
             <span class="border border-yellow-400 text-yellow-600 px-3 py-1 rounded-full text-sm">${issue.labels[0]}</span>
@@ -91,7 +91,7 @@ searchInput.addEventListener("input", () => {
                 ${issue.priority}
             </div>
         </div>
-        <h2 class="font-bold text-xl mt-4 text-gray-800">${issue.title}</h2>
+        <h2 class="font-bold text-xl mt-4 text-gray-800 line-clamp-2">${issue.title}</h2>
         <p class="text-gray-500 mt-2">${issue.description}</p>
         <div class="flex gap-3 mt-4">
             <span class="border border-red-300 text-red-500 px-3 py-1 rounded-full text-sm">${issue.category}</span>
