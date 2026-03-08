@@ -43,7 +43,7 @@ function displayIssues(issues){
         : "/assets/Closed- Status .png";
 
         div.className =
-        `bg-white p-5 rounded-xl shadow border-t-4 ${border} cursor-pointer`;
+        `bg-white p-5 rounded-xl   shadow border-t-4 ${border} cursor-pointer`;
 
         div.innerHTML = `
         <div class="flex justify-between items-start">
@@ -63,15 +63,25 @@ function displayIssues(issues){
         <p class="text-gray-500 mt-2 line-clamp-2">
         ${issue.description}
         </p>
-
         <div class="flex gap-3 mt-4">
-            <span class="border border-red-300 text-red-500 px-3 py-1 rounded-full text-sm">
-            ${issue.labels[1]}
-            </span>
 
-            <span class="border border-yellow-400 text-yellow-600 px-3 py-1 rounded-full text-sm">
-            ${issue.labels[0]}
-            </span>
+  <span class="${
+    issue.labels?.[1]
+      ? 'border border-red-300 text-red-500'
+      : 'bg-green-100 text-green-600'
+  } px-3 py-1 rounded-full text-sm">
+    ${issue.labels?.[1] || "Enhancement"}
+  </span>
+
+  <span class="${
+    issue.labels?.[0]
+      ? 'border border-yellow-400 text-yellow-600'
+      : 'bg-green-100 text-green-600'
+  } px-3 py-1 rounded-full text-sm">
+    ${issue.labels?.[0] || "Enhancement"}
+  </span>
+
+</div>
         </div>
 
         <div class="border-t mt-5 pt-3 text-gray-500 text-sm">
