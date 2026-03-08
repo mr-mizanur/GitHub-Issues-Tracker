@@ -66,7 +66,7 @@ function displayIssues(issues){
 
         <div class="flex gap-3 mt-4">
             <span class="border border-red-300 text-red-500 px-3 py-1 rounded-full text-sm">
-            ${issue.category}
+            ${issue.labels[1]}
             </span>
 
             <span class="border border-yellow-400 text-yellow-600 px-3 py-1 rounded-full text-sm">
@@ -76,7 +76,7 @@ function displayIssues(issues){
 
         <div class="border-t mt-5 pt-3 text-gray-500 text-sm">
             <p>${issue.id} by ${issue.author}</p>
-            <p>${issue.createdAt}</p>
+            <p>${new Date(issue.createdAt).toLocaleDateString()}</p>
         </div>
         `;
 
@@ -95,7 +95,7 @@ function openIssueModal(issue){
         </h2>
 
         <p class="text-gray-600 mb-4 line-clamp-2">
-        ${issue.description}.line-clamp-2
+        ${issue.description}.
         </p>
 
         <div class="flex gap-2 mb-4">
@@ -103,9 +103,6 @@ function openIssueModal(issue){
             Priority : ${issue.priority}
             </span>
 
-            <span class="border px-3 py-1 rounded text-blue-500">
-            Category : ${issue.category}
-            </span>
 
             <span class="border px-3 py-1 rounded text-green-500">
             Status : ${issue.status}
@@ -115,7 +112,7 @@ function openIssueModal(issue){
         <div class="text-sm text-gray-500">
             <p><b>Author :</b> ${issue.author}</p>
             <p><b>ID :</b> ${issue.id}</p>
-            <p><b>Created :</b> ${issue.createdAt}</p>
+            <p>${new Date(issue.createdAt).toLocaleDateString()}</p>
         </div>
     `;
 
